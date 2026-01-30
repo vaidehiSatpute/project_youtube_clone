@@ -13,16 +13,11 @@ stages:
   - job: Build
     displayName: installing package
     steps:
-      
-    - task: Npm@1
-      inputs:
-        command: 'install'
-    - task: Npm@1
-      inputs:
-        command: 'custom'
-        customCommand: 'run build'
-
-        
+    - script: sudo apt install nodejs npm
+      displayName: installing node js
+    - script: nmp install
+      displayName: installing npm packages angular application 
+            
     - task: PublishBuildArtifacts@1
       inputs:
         PathtoPublish: 'build'
