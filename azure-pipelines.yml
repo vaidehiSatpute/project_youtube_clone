@@ -5,7 +5,7 @@ trigger:
    exclude: []
 
 pool:
- vmImage: clone
+ name: clone
 
 stages:
 - stage: Build
