@@ -12,7 +12,14 @@ stages:
           - task: Npm@1
             inputs:
               command: 'install'
- 
+
+          - task: Docker@2
+            inputs:
+              containerRegistry: 'Docker connection'
+              repository: 'vaidehisatpute/clonedocker'
+              command: 'buildAndPush'
+              Dockerfile: '**/Dockerfile'
+    
 
 
 
