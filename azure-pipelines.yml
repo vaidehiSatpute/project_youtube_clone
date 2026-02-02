@@ -4,8 +4,7 @@ trigger:
      - main
    exclude: []
 
-pool:
- name: clone
+pool: Azure Pipelines
 
 stages:
 - stage: Build
