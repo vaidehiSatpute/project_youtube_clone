@@ -1,32 +1,17 @@
 trigger:
- branches:
+  branches:
    include:
      - main
-   exclude: []
-
-pool: 
+pool:
  name: clone
-
-
 stages:
-- stage: Build
-  jobs:
-  - job: Build
-    displayName: installing package
-    steps:
-    - script: sudo apt install nodejs npm
-      displayName: installing node js
-    - script: nmp install
-      displayName: installing npm packages angular application 
-            
-    - task: PublishBuildArtifacts@1
-      inputs:
-        PathtoPublish: 'build'
-        ArtifactName: 'drop'
-        publishLocation: 'Container'
-    
-
-
+  - stage: Build
+    jobs:
+      - job: npmbuild
+        steps:
+          - task: Npm@1
+            inputs:
+              command: 'install'
  
 
 
