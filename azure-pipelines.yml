@@ -18,8 +18,8 @@ stages:
               containerRegistry: 'Docker connection'
               repository: 'vaidehisatpute/clonedocker'
               command: 'buildAndPush'
-              Dockerfile: '**/Dockerfile'
-    
+              Dockerfile: 'Dockerfile'
+              
 
 
 
